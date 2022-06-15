@@ -1,0 +1,359 @@
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital@0;1&display=swap");
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Crimson Text", serif;
+}
+
+/* parent container  */
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  height: 10vh;
+  text-decoration: none;
+}
+
+/* navigation starts here  */
+
+.firstlist,
+.secondlist {
+  font-family: "crimson text", serif;
+  color: grey;
+  font-size: 1.5rem;
+}
+.firstlist li {
+  margin-left: 2rem;
+}
+.firstlist,
+.secondlist,
+.logoimg {
+  background-color: #fff;
+}
+
+.firstlist {
+  list-style: none;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.firstlist li a {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: grey;
+}
+
+.header #logoimg {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#logoimg img {
+  width: 160px;
+  height: 5vh;
+}
+
+.secondlist {
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.secondlist .container-sl {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+.secondlist li {
+  margin-right: 50px;
+}
+.secondlist .selected-language {
+  margin-right: 50px;
+}
+.secondlist li a {
+  text-decoration: none;
+  color: grey;
+}
+.secondlist li {
+  list-style: none;
+}
+.selected-language {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-position: center;
+  position: absolute;
+  top: 20px;
+
+  /* margin-bottom: 100px; */
+  /* line-height: 2; */
+}
+.lang-menu {
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+}
+
+.selected-language::before {
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  /* vertical-align: center; */
+  /* background-image: url("ukflag.svg"); */
+  background-repeat: no-repeat;
+  background-size: stretch;
+}
+
+.lang-menu ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: white;
+  box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+  width: 70px;
+  border: 1px solid #f8f8f8f8;
+  position: absolute;
+  top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  flex-direction: column;
+  border-radius: 5px;
+  display: none;
+}
+.lang-menu:hover ul {
+  display: block;
+}
+.lang-menu ul li {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  position: relative;
+  left: 2.5rem;
+}
+.lang-menu ul li a {
+  color: black;
+  width: 125px;
+  display: block;
+  padding: 5px 10px;
+}
+
+.lang-menu ul li a:hover {
+  background-color: #f2f2f2;
+}
+
+.lang-menu .selected-language ul li a :before {
+  border: 3px solid red;
+  display: inline-block;
+  content: "";
+  display: block;
+  width: 32px;
+  height: 32px;
+  list-style-image: url("ukflag.svg");
+}
+/* navigation ends here  */
+
+/* hero starts here  */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+.hero-left {
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+  background: linear-gradient(180deg, white, #ebebe8);
+  height: 70vh;
+  width: 100%;
+}
+.hero-right {
+  grid-column: 2/3;
+  grid-row: 1 / 2;
+  height: 60vh;
+  background-image: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.5)
+    ),
+    url("herorightside.webp");
+  background-size: cover;
+}
+.hero-right img {
+  width: 100%;
+  height: 100%;
+}
+.form-hero {
+  position: absolute;
+  top: 17rem;
+  left: 30rem;
+  width: 40rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  color: grey;
+}
+
+.form-hero #name {
+  width: 10rem;
+  height: 3.5rem;
+  border: none;
+  text-align: start;
+  padding-left: 10px;
+}
+
+.form-hero #email {
+  width: 10rem;
+  height: 3.5rem;
+  border: none;
+  text-align: start;
+  padding-left: 10px;
+}
+
+.form-hero #pw {
+  width: 10rem;
+  height: 3.5rem;
+  border: none;
+  text-align: start;
+  padding-left: 10px;
+}
+.form-hero .btn-form {
+  width: 10rem;
+  height: 3.5rem;
+  border: none;
+  background: #00c2cb;
+  color: white;
+  text-align: start;
+  padding-left: 10px;
+}
+
+/* hero ends here  */
+
+/* section starts here  */
+
+.section-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+.first-white {
+  grid-column: 1/-1;
+  grid-row: 1/2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 22rem;
+}
+.fw-info {
+  grid-column: 2/3;
+  width: 30rem;
+  justify-self: center;
+  align-self: center;
+}
+
+.sec-main-img {
+  position: absolute;
+  top: 40rem;
+}
+.sec-main-img img {
+  width: 100%;
+  height: 400px;
+}
+.second-grey {
+  grid-column: 1/-1;
+  background: linear-gradient(180deg, white, #c0c0bf);
+
+  grid-row: 2/3;
+  /* height: 50vh; */
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+.second-grey .info-div {
+  grid-column: 1/2;
+  grid-row: 1/2;
+  align-self: center;
+  justify-self: center;
+}
+.bedroom-1 {
+  grid-column: 2/3;
+  grid-row: 1/2;
+  width: 16rem;
+  height: 8rem;
+  align-self: flex-end;
+
+  margin: 10px;
+  margin-bottom: 30px;
+
+}
+.bedroom-2 {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  width: 16rem;
+  height: 8rem;
+  align-self: flex-end;
+
+  margin: 10px;
+  margin-bottom: 30px;
+}
+.bedroom-3 {
+  grid-column: 4/5;
+  grid-row: 1/2;
+  margin: 10px;
+  width: 16rem;
+  height: 8rem;
+  margin-bottom: 30px;
+
+  align-self: flex-end;
+}
+.info-div {
+  padding-top: 5rem;
+}
+.info-div a {
+  text-decoration: none;
+}
+.fw-info h2 {
+  font-size: 4rem;
+  font-family: "Crimson Text", serif;
+  font-weight: 100;
+  color: grey;
+}
+.fw-info p {
+  font-size: 1rem;
+  font-family: "Crimson Text", serif;
+  font-weight: lighter;
+  color: grey;
+}
+
+.info-div a {
+  font-size: 1rem;
+  font-family: "Crimson Text", serif;
+  color: #00c2cb ;
+}
+.info-div h2 {
+  font-size: 4rem;
+  font-family: "Crimson Text", serif;
+  font-weight: 100;
+  color: grey;
+}
+/* section ends here  */
